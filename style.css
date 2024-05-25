@@ -2,39 +2,57 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #292929;
     height: 100%;
     display: flex;
-}   
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .container {
     border-style: solid;
     border-width: 3px;
     border-color: rgb(54, 63, 63);
-    margin: 30px 60px;
-    padding: 25px 60px;
+    margin: 0 auto;  /* Center the container horizontally */
+    padding: 25px;
     background-color: rgb(228, 228, 228);
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .photo-apresentation {
     display: flex;
     align-items: center;
-    width: 10rems;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .photo-apresentation img {
     margin-right: 20px;
     max-width: 150px;
     border-radius: 50%;
+    width: 100%;
+    height: auto;
 }
 
 .name-description {
-    display: column;
+    display: block;
     font-size: 1.2rem;
-
+    text-align: center;
+    margin-top: 20px;
 }
 
 .name-description > h1, h2 {
@@ -45,37 +63,68 @@ body {
     margin: 30px 0;
 }
 
-.about-me  h3 {
+.about-me h3 {
     padding: 10px 0;
 }
 
-.contact {
-    margin: 30px 0;}
+.about-me p {
+    text-align: justify;
+}
 
-.contact ul{
+.contact {
+    margin: 30px 0;
+}
+
+.contact h3 {
+    text-align: center;  /* Center the heading */
+}
+
+.contact ul {
     display: flex;
     list-style: none;   
-    margin: 5px 5px 0;
-    padding-left: 5px; 
+    justify-content: center;
+    padding-left: 0;
+    flex-wrap: wrap;
 }
 
 .contact li {
-    margin-right: 15px;
+    margin: 10px;
 }
 
 .curriculum {
     margin: 10px 0;
+    text-align: center;
 }
 
 .curriculum button {
     margin: 8px;
-    width: 90px;
-    height: 30px;
+    padding: 10px 20px;
     background-color: #292929;
     border-radius: 12%;
+    border: none;
+    cursor: pointer;
 }
 
 .curriculum button a {
     color: rgb(228, 228, 228);
     text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin: 20px 10px;  /* Ensure margins are balanced */
+    }
+
+    .photo-apresentation {
+        flex-direction: column;
+    }
+
+    .photo-apresentation img {
+        margin: 0 0 20px 0;
+    }
+
+    .name-description {
+        text-align: center;
+    }
 }
